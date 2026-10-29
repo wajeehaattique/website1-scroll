@@ -1,223 +1,485 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My CV | Computer Science Student</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0e1226">
+  <meta name="description" content="Wajeeha Attique — Computer Science student exploring AI and related fields.">
+  <title>Wajeeha Attique | Galaxy Terminal CV</title>
 
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            background: "#0e1226",
+            surface: "#0e1226",
+            "surface-container": "#1a1e33",
+            "surface-container-low": "#161a2f",
+            "surface-container-lowest": "#090d21",
+            "surface-container-high": "#25293e",
+            "surface-container-highest": "#303449",
+            "on-surface": "#dee1fd",
+            "on-surface-variant": "#bac9cc",
+            primary: "#c3f5ff",
+            "primary-container": "#00e5ff",
+            secondary: "#ffade3",
+            "secondary-container": "#c000a2",
+            tertiary: "#c5ff6b",
+            "tertiary-container": "#9ee51b",
+            outline: "#849396",
+            "outline-variant": "#3b494c"
+          },
+          fontFamily: {
+            code: ["JetBrains Mono", "monospace"],
+            heading: ["Space Grotesk", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    body { font-family: "JetBrains Mono", monospace; }
+    h1, h2, h3 { font-family: "Space Grotesk", sans-serif; }
+    html { scroll-behavior: smooth; }
+    .code-comment { color: #8b93b8; }
+    .code-keyword { color: #ff4fd8; }
+    .code-string { color: #b6ff3b; }
+    .code-function { color: #00e5ff; }
+    .code-number { color: #ffbd2e; }
+    .code-panel {
+      background: rgba(13, 17, 48, .88);
+      border: 1px solid rgba(110, 64, 201, .28);
+      border-radius: 12px;
+    }
+    .neon-text {
+      color: #00e5ff;
+      text-shadow: 0 0 14px rgba(0, 229, 255, .25);
+    }
+    .neon-border {
+      border: 1px solid rgba(0, 229, 255, .35);
+      box-shadow: 0 0 22px rgba(0, 229, 255, .06);
+    }
+    .avatar-ring {
+      background: linear-gradient(135deg, #00e5ff, #8b5cf6, #ec4899);
+      padding: 4px;
+      box-shadow: 0 0 25px rgba(0, 229, 255, .28);
+    }
+    .avatar-art {
+      background: radial-gradient(circle at 50% 25%, #27204e, #080d22 75%);
+      position: relative;
+      overflow: hidden;
+    }
+    .avatar-art .hair {
+      position: absolute;
+      width: 62%;
+      height: 66%;
+      left: 19%;
+      top: 12%;
+      border-radius: 48% 48% 35% 35%;
+      background: linear-gradient(135deg, #a78bfa, #8b5cf6 55%, #ec4899);
+    }
+    .avatar-art .face {
+      position: absolute;
+      width: 39%;
+      height: 44%;
+      left: 30.5%;
+      top: 24%;
+      border-radius: 45% 45% 48% 48%;
+      background: #d7b7ff;
+    }
+    .avatar-art .body {
+      position: absolute;
+      width: 78%;
+      height: 43%;
+      left: 11%;
+      bottom: -12%;
+      border-radius: 48% 48% 0 0;
+      background: linear-gradient(135deg, #a78bfa, #ec4899);
+    }
+    .avatar-art .hair-front {
+      position: absolute;
+      width: 44%;
+      height: 24%;
+      left: 29%;
+      top: 19%;
+      border-radius: 50% 50% 30% 20%;
+      background: linear-gradient(120deg, #a78bfa, #8b5cf6);
+      transform: rotate(-5deg);
+    }
+    .skill-track {
+      height: 6px;
+      border-radius: 99px;
+      background: #090d21;
+      overflow: hidden;
+    }
+    .skill-fill {
+      height: 100%;
+      border-radius: 99px;
+      background: linear-gradient(90deg, #6e40c9, #00e5ff);
+    }
+    .line-number {
+      display: inline-block;
+      width: 30px;
+      padding-right: 12px;
+      text-align: right;
+      color: #596184;
+      user-select: none;
+    }
+    ::selection { background: #00e5ff; color: #090d21; }
+    @media (max-width: 767px) {
+      .workspace-sidebar { display: none; }
+      .workspace-main { margin-left: 0 !important; padding-left: 12px !important; padding-right: 12px !important; }
+      .top-path { max-width: 70%; overflow: hidden; }
+    }
+  </style>
 </head>
 
-<body>
+<body class="min-h-screen bg-background text-on-surface">
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="logo">MY<span>CV</span></div>
+  <!-- Background glow -->
+  <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+    <div class="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-secondary-container opacity-10 blur-[120px]"></div>
+    <div class="absolute top-1/3 -right-32 h-[32rem] w-[32rem] rounded-full bg-primary-container opacity-10 blur-[140px]"></div>
+    <div class="absolute -bottom-20 left-1/4 h-[28rem] w-[28rem] rounded-full bg-tertiary-container opacity-10 blur-[130px]"></div>
+  </div>
 
-        <ul class="nav-links">
-            <li><a href="#profile">Profile</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#languages">Languages</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+  <!-- Editor title bar -->
+  <header class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-[#090d21]/90 backdrop-blur-xl">
+    <div class="flex h-12 items-center justify-between gap-3 px-4">
+      <div class="flex items-center gap-2">
+        <span class="h-3 w-3 rounded-full bg-red-400"></span>
+        <span class="h-3 w-3 rounded-full bg-yellow-400"></span>
+        <span class="h-3 w-3 rounded-full bg-green-400"></span>
+        <span class="ml-3 hidden text-xs uppercase tracking-widest text-slate-500 sm:inline">IDE v2.4</span>
+      </div>
+
+      <div class="top-path rounded bg-white/5 px-4 py-1 text-xs text-slate-400">
+        <span class="neon-text">~/developer/cv</span>
+        <span class="mx-2">—</span>
+        <span class="text-slate-200">Galaxy Terminal</span>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <span class="hidden text-xs tracking-widest text-green-300 md:inline">SYS_NOMINAL</span>
+        <div class="avatar-ring h-8 w-8 rounded-full">
+          <div class="avatar-art h-full w-full rounded-full">
+            <div class="body"></div><div class="hair"></div>
+            <div class="face"></div><div class="hair-front"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- File explorer -->
+  <aside class="workspace-sidebar fixed bottom-7 left-0 top-12 z-30 flex w-60 flex-col border-r border-white/5 bg-[#11152c]/95">
+    <div class="flex h-10 items-center justify-between border-b border-white/5 px-4 text-[10px] font-semibold tracking-widest text-slate-400">
+      <span>EXPLORER : CV_WORKSPACE</span>
+      <span class="material-symbols-outlined text-base">more_horiz</span>
+    </div>
+
+    <div class="px-3 py-3 text-xs font-semibold tracking-wider text-slate-300">
+      <span class="material-symbols-outlined mr-1 align-middle text-sm">expand_more</span>
+      GALAXY-TERMINAL
+    </div>
+
+    <nav class="flex flex-col gap-1 px-2 text-xs">
+      <a href="#profile" class="file-link"><span class="text-cyan-300">▤</span> profile.md</a>
+      <a href="#skills" class="file-link"><span class="text-yellow-300">JS</span> skills.js</a>
+      <a href="#languages" class="file-link"><span class="text-pink-300">{ }</span> languages.json</a>
+      <a href="#education" class="file-link"><span class="text-pink-300">{ }</span> education.json</a>
+      <a href="#projects" class="file-link"><span class="text-cyan-300">▰</span> projects/</a>
+      <a href="#certifications" class="file-link"><span class="text-purple-300">✓</span> certifications.md</a>
+      <a href="#contact" class="file-link"><span class="text-lime-300">⌘</span> contact.sh</a>
     </nav>
 
+    <div class="mt-auto m-3 rounded-lg border border-white/5 bg-[#090d21] p-3">
+      <div class="mb-2 flex justify-between text-[10px] text-slate-400">
+        <span>CORE_METRICS</span>
+        <span class="text-lime-300">ACTIVE</span>
+      </div>
+      <div class="skill-track"><div class="skill-fill" style="width:80%"></div></div>
+    </div>
+  </aside>
 
-    <!-- PROFILE / HERO -->
-    <section class="hero" id="profile">
+  <!-- Main CV workspace -->
+  <main class="workspace-main ml-60 px-6 pb-48 pt-20">
+    <!-- Tabs -->
+    <div class="fixed left-60 right-0 top-12 z-20 flex h-10 items-center gap-1 overflow-x-auto border-b border-white/5 bg-[#161a2f]/95 px-3 backdrop-blur-xl">
+      <a href="#profile" class="rounded-t border-b-2 border-cyan-300 bg-[#0e1226] px-4 py-2 text-xs text-cyan-200">▤ profile.md</a>
+      <a href="#skills" class="px-4 py-2 text-xs text-slate-400 hover:text-cyan-200">JS skills.js</a>
+      <a href="#projects" class="px-4 py-2 text-xs text-slate-400 hover:text-cyan-200">▰ projects/</a>
+      <a href="#contact" class="px-4 py-2 text-xs text-slate-400 hover:text-cyan-200">⌘ contact.sh</a>
+    </div>
 
-        <div class="hero-text">
-            <p class="small-heading">HELLO, I'M A</p>
+    <div class="mx-auto max-w-5xl space-y-6">
 
-            <h1>
-                Computer Science
-                <span>Student.</span>
-            </h1>
+      <!-- Breadcrumb -->
+      <div class="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-white/5 bg-[#1a1e33]/70 px-4 py-3 text-xs">
+        <div class="text-slate-400">
+          <span class="text-cyan-300">▰ workspace</span>
+          <span class="mx-2">/</span>
+          <span class="text-cyan-300">galaxy-terminal</span>
+          <span class="mx-2">/</span>
+          <span>editor_view.workspace</span>
+        </div>
+        <span class="text-lime-300">● STREAMING TELEMETRY</span>
+      </div>
 
-            <p class="profile-text">
-                A fifth semester Computer Science student who is looking
-                for opportunities in AI or related fields.
+      <!-- Profile -->
+      <section id="profile" class="code-panel relative overflow-hidden p-6 sm:p-8">
+        <div class="absolute -right-20 -top-24 h-64 w-64 rounded-full bg-pink-500/10 blur-3xl"></div>
+
+        <div class="relative flex flex-col gap-6 sm:flex-row sm:items-center">
+          <div class="avatar-ring h-28 w-28 shrink-0 rounded-full">
+            <div class="avatar-art h-full w-full rounded-full">
+              <div class="body"></div><div class="hair"></div>
+              <div class="face"></div><div class="hair-front"></div>
+            </div>
+          </div>
+
+          <div class="flex-1">
+            <p class="code-comment mb-2 text-sm">// Hello, world! Welcome to my workspace.</p>
+            <p class="mb-1 text-sm text-pink-300">const <span class="text-cyan-200">developer</span> = {</p>
+            <h1 class="mb-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Wajeeha Attique</h1>
+            <p class="mb-4 text-sm text-cyan-200">Computer Science Student | AI Explorer</p>
+            <p class="max-w-2xl text-sm leading-7 text-slate-300">
+              A fifth-semester Computer Science student interested in Artificial Intelligence
+              and related fields. Currently building my technical foundation through
+              coursework, personal projects, and online learning.
             </p>
+            <div class="mt-5 flex flex-wrap gap-3">
+              <a href="#contact" class="rounded-lg bg-cyan-300 px-4 py-2 text-xs font-bold text-slate-950 transition hover:bg-cyan-200">Contact Me ↗</a>
+              <button id="downloadCv" class="rounded-lg border border-purple-400/50 px-4 py-2 text-xs text-purple-200 transition hover:bg-purple-400/10">Download CV ↓</button>
+            </div>
+            <p class="mt-4 text-xs text-slate-500">};</p>
+          </div>
+        </div>
+      </section>
 
-            <a href="#skills" class="main-button">Explore My CV ↓</a>
+      <!-- Skills -->
+      <section id="skills" class="code-panel p-5 sm:p-7">
+        <div class="mb-5 flex items-center justify-between gap-3">
+          <h2 class="text-xl font-semibold text-white"><span class="text-yellow-300">JS</span> skills.js</h2>
+          <span class="text-xs text-slate-500">// technical & soft skills</span>
         </div>
 
-        <div class="profile-image-area">
-            <div class="image-decoration"></div>
+        <p class="mb-4 text-sm"><span class="code-keyword">const</span> <span class="code-function">technicalSkills</span> = [</p>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-lg bg-[#090d21] p-4">
+            <div class="mb-2 flex justify-between text-sm"><span>C++</span><span class="text-cyan-300">Basic</span></div>
+            <div class="skill-track"><div class="skill-fill" style="width:40%"></div></div>
+          </div>
+          <div class="rounded-lg bg-[#090d21] p-4">
+            <div class="mb-2 flex justify-between text-sm"><span>Java</span><span class="text-cyan-300">Basic</span></div>
+            <div class="skill-track"><div class="skill-fill" style="width:40%"></div></div>
+          </div>
+          <div class="rounded-lg bg-[#090d21] p-4">
+            <div class="mb-2 flex justify-between text-sm"><span>HTML</span><span class="text-cyan-300">Basic</span></div>
+            <div class="skill-track"><div class="skill-fill" style="width:45%"></div></div>
+          </div>
+          <div class="rounded-lg bg-[#090d21] p-4">
+            <div class="mb-2 flex justify-between text-sm"><span>CSS</span><span class="text-cyan-300">Basic</span></div>
+            <div class="skill-track"><div class="skill-fill" style="width:40%"></div></div>
+          </div>
+          <div class="rounded-lg bg-[#090d21] p-4 sm:col-span-2">
+            <div class="mb-2 flex justify-between text-sm"><span>JavaScript</span><span class="text-cyan-300">Basic</span></div>
+            <div class="skill-track"><div class="skill-fill" style="width:35%"></div></div>
+          </div>
+        </div>
+        <p class="mt-4 text-sm text-slate-400">];</p>
 
-            <div class="profile-image">
-                <img src="profile.png" alt="Female Computer Science Student">
-            </div>
+        <div class="mt-6 border-t border-white/10 pt-5">
+          <p class="mb-4 text-sm"><span class="code-keyword">const</span> <span class="code-function">softSkills</span> = [</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="rounded-full border border-purple-400/30 bg-purple-400/10 px-3 py-2 text-xs text-purple-200">Problem Solving</span>
+            <span class="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-2 text-xs text-cyan-200">Attention to Detail</span>
+            <span class="rounded-full border border-pink-400/30 bg-pink-400/10 px-3 py-2 text-xs text-pink-200">Team Collaboration</span>
+          </div>
+          <p class="mt-4 text-sm text-slate-400">];</p>
+        </div>
+      </section>
 
-            <div class="floating-tag">&lt;/&gt; CS</div>
+      <!-- Languages -->
+      <section id="languages" class="code-panel p-5 sm:p-7">
+        <div class="mb-5 flex items-center justify-between">
+          <h2 class="text-xl font-semibold text-white"><span class="text-pink-300">{ }</span> languages.json</h2>
+          <span class="text-xs text-slate-500">JSON</span>
+        </div>
+        <div class="overflow-x-auto rounded-lg bg-[#090d21] p-4 text-sm leading-8">
+          <p><span class="text-slate-500">{</span></p>
+          <p class="pl-5"><span class="text-cyan-300">"languages"</span>: <span class="text-slate-500">[</span></p>
+          <p class="pl-10"><span class="text-slate-500">{</span> <span class="text-cyan-300">"name"</span>: <span class="code-string">"Urdu"</span>, <span class="text-cyan-300">"level"</span>: <span class="code-string">"Native"</span> <span class="text-slate-500">},</span></p>
+          <p class="pl-10"><span class="text-slate-500">{</span> <span class="text-cyan-300">"name"</span>: <span class="code-string">"English"</span>, <span class="text-cyan-300">"level"</span>: <span class="code-string">"Working proficiency"</span> <span class="text-slate-500">}</span></p>
+          <p class="pl-5"><span class="text-slate-500">]</span></p>
+          <p><span class="text-slate-500">}</span></p>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section id="education" class="code-panel p-5 sm:p-7">
+        <div class="mb-5 flex items-center justify-between gap-3">
+          <h2 class="text-xl font-semibold text-white"><span class="text-pink-300">{ }</span> education.json</h2>
+          <span class="text-xs text-slate-500">JSON</span>
+        </div>
+        <div class="rounded-lg border border-white/5 bg-[#090d21] p-5">
+          <p class="mb-3 text-xs text-purple-300">"education": {</p>
+          <h3 class="text-lg font-semibold text-white">Computer Science</h3>
+          <p class="mt-2 text-sm text-cyan-200">BS Computer Science — 5th Semester</p>
+          <p class="mt-2 text-sm text-slate-400">Qarshi University</p>
+          <p class="mt-2 text-sm text-slate-400">Based in Pakistan</p>
+          <p class="mt-3 text-xs text-purple-300">}</p>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="code-panel p-5 sm:p-7">
+        <div class="mb-5 flex flex-wrap items-center justify-between gap-3">
+          <h2 class="text-xl font-semibold text-white"><span class="text-cyan-300">▰</span> projects/</h2>
+          <span class="text-xs text-slate-500">// selected work</span>
         </div>
 
-    </section>
+        <article class="neon-border rounded-xl bg-[#090d21] p-5 transition hover:border-cyan-300/60">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <h3 class="text-lg font-semibold text-white">Digicams Website</h3>
+            <span class="rounded-full bg-purple-400/10 px-3 py-1 text-xs text-purple-200">Web Technologies Lab</span>
+          </div>
+          <p class="mt-3 text-sm leading-7 text-slate-300">
+            A website focused on digital cameras, created as part of a Web Technologies lab project
+            using HTML, CSS, and JavaScript.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="rounded bg-orange-400/10 px-2 py-1 text-xs text-orange-200">HTML</span>
+            <span class="rounded bg-blue-400/10 px-2 py-1 text-xs text-blue-200">CSS</span>
+            <span class="rounded bg-yellow-400/10 px-2 py-1 text-xs text-yellow-200">JavaScript</span>
+          </div>
+        </article>
 
+        <div class="mt-5 rounded-lg border border-dashed border-purple-400/30 p-4">
+          <p class="text-xs text-purple-300">// Currently learning</p>
+          <p class="mt-2 text-sm text-slate-300">Git and GitHub — exploring version control and project collaboration.</p>
+        </div>
+      </section>
 
-    <!-- SKILLS -->
-    <section class="section" id="skills">
-
-        <div class="section-heading">
-            <p>WHAT I KNOW</p>
-            <h2>My Skills</h2>
+      <!-- Certifications and courses -->
+      <section id="certifications" class="code-panel p-5 sm:p-7">
+        <div class="mb-5 flex items-center justify-between gap-3">
+          <h2 class="text-xl font-semibold text-white"><span class="text-purple-300">✓</span> certifications.md</h2>
+          <span class="text-xs text-slate-500">learning.log</span>
         </div>
 
-        <div class="skills-container">
+        <p class="code-comment mb-4 text-sm"># Courses & continuous learning</p>
 
-            <!-- TECHNICAL SKILLS -->
-            <div class="skill-card">
-                <div class="card-icon">&lt;/&gt;</div>
-                <h3>Technical Skills</h3>
-
-                <ul>
-                    <li>Basic C++</li>
-                    <li>Basic Java</li>
-                    <li>Basic HTML</li>
-                    <li>Basic CSS</li>
-                    <li>Basic JavaScript</li>
-                </ul>
+        <div class="space-y-4">
+          <div class="rounded-lg bg-[#090d21] p-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="font-semibold text-white">Google AI</h3>
+              <span class="text-xs text-cyan-300">Coursera</span>
             </div>
+            <p class="mt-2 text-sm text-slate-400">Currently studying AI concepts and applications.</p>
+            <div class="mt-4 skill-track"><div class="skill-fill" style="width:45%"></div></div>
+            <p class="mt-2 text-right text-xs text-slate-500">In progress</p>
+          </div>
 
-
-            <!-- SOFT SKILLS -->
-            <div class="skill-card">
-                <div class="card-icon">✦</div>
-                <h3>Soft Skills</h3>
-
-                <ul>
-                    <li>Problem Solving</li>
-                    <li>Attention to Detail</li>
-                </ul>
+          <div class="rounded-lg bg-[#090d21] p-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="font-semibold text-white">Google AI Essentials</h3>
+              <span class="text-xs text-cyan-300">Coursera</span>
             </div>
+            <p class="mt-2 text-sm text-slate-400">Building foundational knowledge of practical AI tools and workflows.</p>
+            <div class="mt-4 skill-track"><div class="skill-fill" style="width:35%"></div></div>
+            <p class="mt-2 text-right text-xs text-slate-500">In progress</p>
+          </div>
+        </div>
+      </section>
 
+      <!-- Contact -->
+      <section id="contact" class="code-panel p-5 sm:p-7">
+        <div class="mb-5 flex items-center justify-between gap-3">
+          <h2 class="text-xl font-semibold text-white"><span class="text-lime-300">⌘</span> contact.sh</h2>
+          <span class="text-xs text-slate-500">bash</span>
         </div>
 
-    </section>
+        <p class="code-comment mb-4 text-sm">#!/bin/bash</p>
+        <p class="mb-4 text-sm text-slate-300"># Let's connect and build something meaningful.</p>
 
-
-    <!-- LANGUAGES -->
-    <section class="section alternate-section" id="languages">
-
-        <div class="section-heading">
-            <p>COMMUNICATION</p>
-            <h2>Languages</h2>
+        <div class="space-y-3">
+          <a href="mailto:meow@gmail.com" class="contact-link">
+            <span class="material-symbols-outlined text-cyan-300">mail</span>
+            <span><span class="text-slate-500">EMAIL=</span> meow@gmail.com</span>
+          </a>
+          <a href="tel:01234567899" class="contact-link">
+            <span class="material-symbols-outlined text-purple-300">call</span>
+            <span><span class="text-slate-500">PHONE=</span> 0123-4567899</span>
+          </a>
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="contact-link">
+            <span class="material-symbols-outlined text-pink-300">code</span>
+            <span><span class="text-slate-500">GITHUB=</span> View GitHub profile ↗</span>
+          </a>
         </div>
 
-        <div class="language-container">
-
-            <div class="language-card">
-                <span class="language-icon">ا</span>
-                <h3>Urdu</h3>
-            </div>
-
-            <div class="language-card">
-                <span class="language-icon">A</span>
-                <h3>English</h3>
-            </div>
-
+        <div class="mt-6 rounded-lg border border-cyan-300/20 bg-cyan-300/5 p-4">
+          <span class="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-lime-300"></span>
+          <span class="text-sm text-lime-200">Open to AI opportunities</span>
+          <p class="mt-2 text-xs leading-6 text-slate-400">Interested in learning, collaboration, and opportunities related to AI and computer science.</p>
         </div>
+      </section>
 
-    </section>
+      <footer class="pb-8 pt-2 text-center text-xs text-slate-600">
+        <p>/* Designed in the Galaxy Terminal universe */</p>
+        <p class="mt-2">© <span id="year"></span> Wajeeha Attique</p>
+      </footer>
 
+    </div>
+  </main>
 
-    <!-- EDUCATION -->
-    <section class="section" id="education">
+  <!-- Terminal panel -->
+  <div class="fixed bottom-7 left-0 right-0 z-40 border-t border-cyan-300/20 bg-[#090d21]/95 backdrop-blur-xl">
+    <div class="flex h-8 items-center gap-5 overflow-x-auto border-b border-white/5 px-4 text-[10px] tracking-widest">
+      <span class="border-b border-cyan-300 py-2 text-cyan-200">TERMINAL</span>
+      <span class="py-2 text-slate-500">OUTPUT</span>
+      <span class="py-2 text-slate-500">DEBUG CONSOLE</span>
+      <span class="ml-auto py-2 text-lime-300">● READY</span>
+    </div>
+    <div class="flex h-7 items-center gap-2 px-4 text-xs">
+      <span class="text-lime-300">➜</span>
+      <span class="text-cyan-200">~/galaxy-terminal</span>
+      <span class="text-slate-400">$</span>
+      <span class="text-slate-300">profile loaded successfully</span>
+      <span class="ml-auto hidden text-slate-600 sm:inline">UTF-8&nbsp; | &nbsp;HTML&nbsp; | &nbsp;Ln 1, Col 1</span>
+    </div>
+  </div>
 
-        <div class="section-heading">
-            <p>MY JOURNEY</p>
-            <h2>Education</h2>
-        </div>
+  <!-- Bottom status bar -->
+  <div class="fixed bottom-0 left-0 right-0 z-50 flex h-7 items-center justify-between bg-[#6e40c9] px-4 text-[10px] font-medium text-white">
+    <div class="flex items-center gap-4">
+      <span>◈ GALAXY TERMINAL</span>
+      <span class="hidden sm:inline">⎇ main*</span>
+    </div>
+    <div class="flex items-center gap-4">
+      <span class="hidden sm:inline">Open to AI opportunities</span>
+      <span>UTF-8</span>
+      <span>HTML</span>
+    </div>
+  </div>
 
-        <div class="education-container">
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-            <div class="education-card">
-                <div class="education-number">01</div>
-
-                <div>
-                    <h3>Qarshi University</h3>
-                    <p>Bachelors of Science in Computer Science</p>
-                    <span>2024 - 2028 (ongoing)</span>
-                </div>
-            </div>
-
-
-            <div class="education-card">
-                <div class="education-number">02</div>
-
-                <div>
-                    <h3>Punjab College</h3>
-                    <p>Intermediate (F.Sc. Pre-Engg.)</p>
-                    <span>2022 - 2024</span>
-                </div>
-            </div>
-
-
-            <div class="education-card">
-                <div class="education-number">03</div>
-
-                <div>
-                    <h3>Message Grammar School</h3>
-                    <p>PG till Matriculation</p>
-                    <span>2009 - 2022</span>
-                </div>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-    <section class="contact-section" id="contact">
-
-        <div class="contact-text">
-            <p class="small-heading">LET'S CONNECT</p>
-            <h2>Get In Touch.</h2>
-
-            <p>
-                Interested in connecting? Feel free to reach out through
-                phone or email.
-            </p>
-        </div>
-
-        <div class="contact-details">
-
-            <div class="contact-card">
-                <span>☎</span>
-
-                <div>
-                    <p>PHONE</p>
-                    <h3>0123-4567899</h3>
-                </div>
-            </div>
-
-
-            <div class="contact-card">
-                <span>✉</span>
-
-                <div>
-                    <p>EMAIL</p>
-                    <h3>meoww@gmail.com</h3>
-                </div>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-    <footer>
-        <p>Computer Science Student • CV Portfolio</p>
-        <a href="#profile">Back to Top ↑</a>
-    </footer>
-
+    document.getElementById("downloadCv").addEventListener("click", function () {
+      alert("Add your CV PDF file to enable downloading it here.");
+    });
+  </script>
 </body>
 </html>
